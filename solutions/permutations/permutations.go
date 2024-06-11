@@ -8,9 +8,8 @@ func permutations(arr *[]int) [][]int {
 
 func backtrack(res *[][]int, nums *[]int, permutation []int, used map[int]struct{}) {
 	if len(permutation) == len(*nums) {
-		p := make([]int, len(permutation))
-		copy(p, permutation)
-		*res = append(*res, p)
+
+		*res = append(*res, permutation)
 		return
 	}
 	for i := 0; i < len(*nums); i++ {
