@@ -10,7 +10,7 @@ func backtrack(res *[][]int, nums *[]int, permutation []int, used map[int]struct
 	if len(permutation) == len(*nums) {
 		p := make([]int, len(permutation))
 		copy(p, permutation)
-		*res = append(*res, permutation)
+		*res = append(*res, p)
 		return
 	}
 	for i := 0; i < len(*nums); i++ {
@@ -21,9 +21,7 @@ func backtrack(res *[][]int, nums *[]int, permutation []int, used map[int]struct
 			backtrack(res, nums, permutation, used)
 
 			delete(used, i)
-			p := make([]int, len(permutation))
-			copy(p, permutation)
-			permutation = p[:len(p)-1]
+			permutation = permutation[:len(permutation)-1]
 		}
 	}
 }
