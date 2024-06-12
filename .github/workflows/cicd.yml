@@ -1,4 +1,4 @@
-name: Build and test
+name: CICD pipeline
 on: [push]
 
 jobs:
