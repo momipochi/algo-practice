@@ -1,13 +1,9 @@
 package l3longestsubstringwithoutrepeat
 
-import (
-	"algo-practice/utils"
-)
-
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 
 func lengthOfLongestSubstring(s string) int {
-	max, l, r := 0, 0, 1
+	mx, l, r := 0, 0, 1
 	for r < len(s) {
 		tmp := setNewLeft(&s, &l, &r)
 		if tmp != 0 {
@@ -17,9 +13,9 @@ func lengthOfLongestSubstring(s string) int {
 			r++
 		}
 		tmp = r - l
-		max = utils.Max(max, tmp)
+		mx = max(mx, tmp)
 	}
-	return max
+	return mx
 }
 
 func setNewLeft(s *string, l *int, r *int) int {

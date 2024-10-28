@@ -64,19 +64,6 @@ func IsEqualArrayString(a []string, b []string) bool {
 	return true
 }
 
-func Max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-func Min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
-}
-
 func DeafultTestOutput[V any](t *testing.T, expected V, actual V) {
 	t.Errorf("Wrong answer. \nExpected <%v>\nReceived <%v>", expected, actual)
 }
