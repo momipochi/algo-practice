@@ -26,3 +26,16 @@ func IsEqualArray(a []int, b []int) bool {
 	}
 	return true
 }
+
+func Max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+func Min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
