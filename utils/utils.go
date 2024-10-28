@@ -1,5 +1,7 @@
 package utils
 
+import "testing"
+
 func IsEqual2DArray(a [][]int, b [][]int) bool {
 	if len(a) != len(b) {
 		return false
@@ -38,4 +40,8 @@ func Min(a, b int) int {
 		return b
 	}
 	return a
+}
+
+func DeafultTestOutput[T any](t *testing.T, expected T, actual T) {
+	t.Errorf("Wrong answer. \nExpected <%s>\nReceived <%s>", expected, actual)
 }
