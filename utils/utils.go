@@ -78,5 +78,5 @@ func Min(a, b int) int {
 }
 
 func DeafultTestOutput[V any](t *testing.T, expected V, actual V) {
-	t.Errorf("Wrong answer. \nExpected <%s>\nReceived <%s>", expected, actual)
+	t.Errorf("Wrong answer. \nExpected <%v>\nReceived <%v>", expected, actual)
 }
