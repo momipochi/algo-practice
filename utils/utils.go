@@ -17,6 +17,16 @@ func IsEqual2DArray(a [][]int, b [][]int) bool {
 	return true
 }
 
+func FlattenArray[T any](collection [][]T) []T {
+	res := []T{}
+	for i := 0; i < len(collection); i++ {
+		for j := 0; j < len(collection[i]); j++ {
+			res = append(res, collection[i][j])
+		}
+	}
+	return res
+}
+
 func IsEqualArray(a []int, b []int) bool {
 	if len(a) != len(b) {
 		return false
