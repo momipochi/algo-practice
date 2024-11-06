@@ -3,7 +3,7 @@ package l3longestsubstringwithoutrepeat
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 
 func lengthOfLongestSubstring(s string) int {
-	mx, l, r := 0, 0, 1
+	mx, l, r := 0, 0, 0
 	for r < len(s) {
 		tmp := setNewLeft(&s, &l, &r)
 		if tmp != 0 {
@@ -19,11 +19,12 @@ func lengthOfLongestSubstring(s string) int {
 }
 
 func setNewLeft(s *string, l *int, r *int) int {
-	count := 0
+	count := 1
 	for i := *l; i < *r; i++ {
 		if (*s)[i] == (*s)[*r] {
-			count++
+			return count
 		}
+		count++
 	}
-	return count
+	return 0
 }
